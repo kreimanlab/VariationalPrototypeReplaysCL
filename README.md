@@ -85,7 +85,7 @@ Follow instructions for permuted MNIST above for training, evaluating and testin
 
 ## Notes
 
-The source code is for illustration purpose only. Path reconfigurations may be needed to run some MATLAB scripts. We do not provide techinical supports but we would be happy to discuss about SCIENCE!
+The source code is for illustration purpose only. We do not provide techinical supports but we would be happy to discuss about SCIENCE!
 
 ## License
 
