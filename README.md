@@ -1,7 +1,7 @@
 # Variational Prototype Replays for Continual Learning
 Authors: Mengmi Zhang, Tao Wang, Joo Hwee Lim, and Gabriel Kreiman, and Jiashi Feng
 
-This repository contains an implementation of a few-shot continual learning method for preventing catastrophic forgetting in object classification tasks. Our paper is currently under review.
+This repository contains an implementation of a few-shot continual learning method for preventing catastrophic forgetting in object classification tasks. 
 
 Arxiv version is [HERE](https://arxiv.org/abs/1905.09447).
 
@@ -82,6 +82,26 @@ python preprocess_mini_imagenet.py
 **NOTE** Modifications of path directory are needed in ```preprocess_mini_imagenet.py```.
 
 Follow instructions for permuted MNIST above for training, evaluating and testing our method in split miniImageNet protocol.
+
+## Comparative Methods
+
+We adapted [ICARL code](https://github.com/donlee90/icarl) and [code for other methods](https://github.com/GT-RIPL/Continual-Learning-Benchmark) to test comparative methods used in our paper. It is strongly recommended to download from their original repositories. Here, we provided the revised version of their codes in each paradigm. Run the following shell scrips in each dataset folder ```MINSTpermuted```, ```CIFARincrement``` and ```IMAGENETincrement``` to get results of ICARL:
+```
+icarl/icarlBCE.sh #binary cross-entropy loss on logits
+icarl/icarlKLD.sh #KLDivergence loss on logits
+icarl/icarlMSE.sh #mean squared error loss on logits
+```
+Similarly, to get resutls of all other comparative methods, use the following scripts:
+```
+MINSTpermuted/Continual-Learning-Benchmark-master/scripts/permuted_MNIST_incremental_domain.sh
+CIFARincrement/Continual-Learning-Benchmark-master/scripts/split_CIFAR10_incremental_class.sh
+IMAGENETincrement/Continual-Learning-Benchmark-master/scripts/split_ImageNet_incremental_class.sh
+```
+To run any of the shell scripts above, simiply follow the example below:
+```
+cd IMAGENETincrement/Continual-Learning-Benchmark-master/scripts/
+./split_ImageNet_incremental_class.sh 0 #where 0 is GPU_ID
+```
 
 ## Notes
 
